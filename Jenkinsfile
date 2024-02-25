@@ -12,6 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'building the code'
+                sh "cd /var/lib/jenkins/workspace/project-1"
                 sh "docker build -t myapp ."
             }
         }
