@@ -28,6 +28,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'deploying the conatiner'
+                sh "apt install docker-compose -y"
                 sh "docker-compose down && docker-compose up -d"
             }
         }
