@@ -12,8 +12,6 @@ pipeline {
         stage('build') {
             steps {
                 echo 'building the code'
-                sh "usermod -aG docker jenkins"
-                sh "chmod 666 /var/run/docker.sock"
                 sh "docker build -t myapp ."
             }
         }
